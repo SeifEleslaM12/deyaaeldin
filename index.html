@@ -1,0 +1,1358 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ضياء الدين للاستشارات القانونية | Deyaaeldin Legal Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #c59d5f;
+            --dark-color: #2d3748;
+            --light-color: #f7fafc;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .font-english {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .font-arabic {
+            font-family: 'Amiri', serif;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .text-primary {
+            color: var(--primary-color);
+        }
+        
+        .text-secondary {
+            color: var(--secondary-color);
+        }
+        
+        .border-secondary {
+            border-color: var(--secondary-color);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .active-nav:after {
+            width: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .file-card:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* Language specific styles */
+        html[lang="en"] {
+            direction: ltr;
+        }
+        
+        html[lang="ar"] {
+            direction: rtl;
+        }
+        
+        html[lang="ur"] {
+            direction: rtl;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="bg-gray-100 py-1 px-4 text-sm flex justify-end items-center">
+        <div class="flex space-x-2 rtl:space-x-reverse">
+            <button onclick="changeLanguage('ar')" class="px-2 py-1 hover:text-secondary transition-colors" id="ar-btn">العربية</button>
+            <span class="text-gray-400">|</span>
+            <button onclick="changeLanguage('en')" class="px-2 py-1 hover:text-secondary transition-colors" id="en-btn">English</button>
+            <span class="text-gray-400">|</span>
+            <button onclick="changeLanguage('ur')" class="px-2 py-1 hover:text-secondary transition-colors" id="ur-btn">اردو</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mr-3 rtl:ml-3 rtl:mr-0">
+                    <span class="lang-ar">ض</span>
+                    <span class="lang-en hidden">D</span>
+                    <span class="lang-ur hidden">ض</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-primary">
+                        <span class="lang-ar">ضياء الدين للاستشارات القانونية</span>
+                        <span class="lang-en hidden font-english">Deyaaeldin Legal Consultancy</span>
+                        <span class="lang-ur hidden">ضیاء الدین قانونی مشاورت</span>
+                    </h1>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-ar">الخبرة القانونية التي يمكنك الاعتماد عليها</span>
+                        <span class="lang-en hidden font-english">Legal expertise you can rely on</span>
+                        <span class="lang-ur hidden">قانونی مہارت جس پر آپ بھروسہ کر سکتے ہیں</span>
+                    </p>
+                </div>
+            </div>
+            
+            <nav class="w-full md:w-auto">
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-6 rtl:space-x-reverse">
+                    <li><a href="#home" class="nav-link active-nav text-primary hover:text-secondary transition-colors" data-section="home">
+                        <span class="lang-ar">الرئيسية</span>
+                        <span class="lang-en hidden">Home</span>
+                        <span class="lang-ur hidden">ہوم</span>
+                    </a></li>
+                    <li><a href="#about" class="nav-link text-primary hover:text-secondary transition-colors" data-section="about">
+                        <span class="lang-ar">من نحن</span>
+                        <span class="lang-en hidden">About</span>
+                        <span class="lang-ur hidden">ہمارے بارے میں</span>
+                    </a></li>
+                    <li><a href="#services" class="nav-link text-primary hover:text-secondary transition-colors" data-section="services">
+                        <span class="lang-ar">الخدمات</span>
+                        <span class="lang-en hidden">Services</span>
+                        <span class="lang-ur hidden">خدمات</span>
+                    </a></li>
+                    <li><a href="#documents" class="nav-link text-primary hover:text-secondary transition-colors" data-section="documents">
+                        <span class="lang-ar">الملفات</span>
+                        <span class="lang-en hidden">Documents</span>
+                        <span class="lang-ur hidden">دستاویزات</span>
+                    </a></li>
+                    <li><a href="#news" class="nav-link text-primary hover:text-secondary transition-colors" data-section="news">
+                        <span class="lang-ar">الأخبار</span>
+                        <span class="lang-en hidden">News</span>
+                        <span class="lang-ur hidden">خبریں</span>
+                    </a></li>
+                    <li><a href="#contact" class="nav-link text-primary hover:text-secondary transition-colors" data-section="contact">
+                        <span class="lang-ar">اتصل بنا</span>
+                        <span class="lang-en hidden">Contact</span>
+                        <span class="lang-ur hidden">رابطہ کریں</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-primary text-white py-20">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSI+PC9yZWN0PjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSI+PC9yZWN0Pjwvc3ZnPg==')] opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        <span class="lang-ar">الحلول القانونية المتكاملة</span>
+                        <span class="lang-en hidden font-english">Comprehensive Legal Solutions</span>
+                        <span class="lang-ur hidden">جامع قانونی حل</span>
+                    </h2>
+                    <p class="text-xl mb-8 text-gray-200">
+                        <span class="lang-ar">نقدم استشارات قانونية متخصصة وحلولاً مبتكرة لتلبية احتياجاتك القانونية بكفاءة واحترافية عالية.</span>
+                        <span class="lang-en hidden font-english">We provide specialized legal consultations and innovative solutions to efficiently meet your legal needs with high professionalism.</span>
+                        <span class="lang-ur hidden">ہم اعلی پیشہ ورانہ مہارت کے ساتھ آپ کی قانونی ضروریات کو موثر طریقے سے پورا کرنے کے لیے خصوصی قانونی مشاورت اور جدید حل فراہم کرتے ہیں۔</span>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-secondary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md transition-all transform hover:scale-105">
+                            <span class="lang-ar">تواصل معنا</span>
+                            <span class="lang-en hidden">Contact Us</span>
+                            <span class="lang-ur hidden">ہم سے رابطہ کریں</span>
+                        </a>
+                        <a href="#services" class="bg-transparent border-2 border-white hover:border-secondary hover:text-secondary text-white font-bold py-3 px-6 rounded-md transition-all transform hover:scale-105">
+                            <span class="lang-ar">استكشف خدماتنا</span>
+                            <span class="lang-en hidden">Explore Our Services</span>
+                            <span class="lang-ur hidden">ہماری خدمات دریافت کریں</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center animate-fade-in delay-200">
+                    <svg class="w-full max-w-md" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#c59d5f" d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"/>
+                        <rect fill="#c59d5f" x="256" y="232" width="128" height="32"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl font-bold text-primary mb-2">
+                    <span class="lang-ar">من نحن</span>
+                    <span class="lang-en hidden font-english">About Us</span>
+                    <span class="lang-ur hidden">ہمارے بارے میں</span>
+                </h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/3 mb-8 md:mb-0 animate-fade-in delay-100">
+                    <div class="relative mx-auto w-64 h-64 rounded-full overflow-hidden border-4 border-secondary shadow-lg">
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="35" r="20" fill="#1a365d"/>
+                            <circle cx="50" cy="95" r="40" fill="#1a365d"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mt-6 text-primary">
+                        <span class="lang-ar">المستشار ضياء الدين عوض</span>
+                        <span class="lang-en hidden font-english">Counselor Deyaaeldin Awad</span>
+                        <span class="lang-ur hidden">مشیر ضیاء الدین عوض</span>
+                    </h3>
+                    <p class="text-center text-gray-600">
+                        <span class="lang-ar">مستشار قانوني</span>
+                        <span class="lang-en hidden">Legal Consultant</span>
+                        <span class="lang-ur hidden">قانونی مشیر</span>
+                    </p>
+                </div>
+                
+                <div class="w-full md:w-2/3 md:pl-12 animate-fade-in delay-200">
+                    <p class="text-lg text-gray-700 mb-6">
+                        <span class="lang-ar">مكتب ضياء الدين للاستشارات القانونية هو مكتب متخصص في تقديم الخدمات القانونية المتكاملة بأعلى معايير الجودة والاحترافية. تأسس المكتب على يد المستشار ضياء الدين عوض، الذي يتمتع بخبرة واسعة في مختلف مجالات القانون.</span>
+                        <span class="lang-en hidden font-english">Deyaaeldin Legal Consultancy is a specialized office providing comprehensive legal services with the highest standards of quality and professionalism. The office was founded by Counselor Deyaaeldin Awad, who has extensive experience in various fields of law.</span>
+                        <span class="lang-ur hidden">ضیاء الدین لیگل کنسلٹنسی ایک خصوصی دفتر ہے جو معیار اور پیشہ ورانہ مہارت کے اعلی ترین معیارات کے ساتھ جامع قانونی خدمات فراہم کرتا ہے۔ یہ دفتر مشیر ضیاء الدین عوض کے ذریعہ قائم کیا گیا تھا، جنہیں قانون کے مختلف شعبوں میں وسیع تجربہ حاصل ہے۔</span>
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        <span class="lang-ar">نحن نؤمن بأن كل قضية تستحق اهتماماً خاصاً، ونسعى جاهدين لتقديم حلول قانونية مبتكرة تلبي احتياجات عملائنا وتحقق أهدافهم. يتميز مكتبنا بالالتزام بالمعايير الأخلاقية العالية والسرية التامة في التعامل مع قضايا العملاء.</span>
+                        <span class="lang-en hidden font-english">We believe that every case deserves special attention, and we strive to provide innovative legal solutions that meet our clients' needs and achieve their goals. Our office is characterized by a commitment to high ethical standards and complete confidentiality in dealing with client cases.</span>
+                        <span class="lang-ur hidden">ہمارا ماننا ہے کہ ہر کیس خصوصی توجہ کا مستحق ہے، اور ہم جدید قانونی حل فراہم کرنے کی کوشش کرتے ہیں جو ہمارے کلائنٹس کی ضروریات کو پورا کرتے ہیں اور ان کے مقاصد حاصل کرتے ہیں۔ ہمارے دفتر کی خصوصیت اعلی اخلاقی معیارات اور کلائنٹ کیسز سے نمٹنے میں مکمل رازداری کے عزم سے ہے۔</span>
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl text-secondary mb-2">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4 class="font-bold text-primary">
+                                <span class="lang-ar">العدالة</span>
+                                <span class="lang-en hidden">Justice</span>
+                                <span class="lang-ur hidden">انصاف</span>
+                            </h4>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl text-secondary mb-2">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="font-bold text-primary">
+                                <span class="lang-ar">النزاهة</span>
+                                <span class="lang-en hidden">Integrity</span>
+                                <span class="lang-ur hidden">دیانت داری</span>
+                            </h4>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl text-secondary mb-2">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4 class="font-bold text-primary">
+                                <span class="lang-ar">الثقة</span>
+                                <span class="lang-en hidden">Trust</span>
+                                <span class="lang-ur hidden">اعتماد</span>
+                            </h4>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl text-secondary mb-2">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4 class="font-bold text-primary">
+                                <span class="lang-ar">التميز</span>
+                                <span class="lang-en hidden">Excellence</span>
+                                <span class="lang-ur hidden">امتیاز</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl font-bold text-primary mb-2">
+                    <span class="lang-ar">خدماتنا القانونية</span>
+                    <span class="lang-en hidden font-english">Our Legal Services</span>
+                    <span class="lang-ur hidden">ہماری قانونی خدمات</span>
+                </h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    <span class="lang-ar">نقدم مجموعة واسعة من الخدمات القانونية المتخصصة لتلبية احتياجاتك القانونية المختلفة</span>
+                    <span class="lang-en hidden font-english">We offer a wide range of specialized legal services to meet your various legal needs</span>
+                    <span class="lang-ur hidden">ہم آپ کی مختلف قانونی ضروریات کو پورا کرنے کے لیے خصوصی قانونی خدمات کی ایک وسیع رینج پیش کرتے ہیں</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 service-card animate-fade-in delay-100">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">
+                        <span class="lang-ar">التقاضي والترافع</span>
+                        <span class="lang-en hidden font-english">Litigation & Advocacy</span>
+                        <span class="lang-ur hidden">مقدمہ بازی اور وکالت</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        <span class="lang-ar">تمثيل العملاء أمام مختلف المحاكم والهيئات القضائية، وإعداد المذكرات والدفوع القانونية، ومتابعة القضايا بكافة مراحلها.</span>
+                        <span class="lang-en hidden font-english">Representing clients before various courts and judicial bodies, preparing legal memoranda and defenses, and following up on cases at all stages.</span>
+                        <span class="lang-ur hidden">مختلف عدالتوں اور عدالتی اداروں کے سامنے کلائنٹس کی نمائندگی، قانونی میمورنڈا اور دفاع کی تیاری، اور تمام مراحل پر کیسز کی پیروی۔</span>
+                    </p>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                        <span class="lang-ar">المزيد من التفاصيل</span>
+                        <span class="lang-en hidden">More Details</span>
+                        <span class="lang-ur hidden">مزید تفصیلات</span>
+                        <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 service-card animate-fade-in delay-200">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">
+                        <span class="lang-ar">العقود والاتفاقيات</span>
+                        <span class="lang-en hidden font-english">Contracts & Agreements</span>
+                        <span class="lang-ur hidden">معاہدے اور معاہدے</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        <span class="lang-ar">صياغة ومراجعة وتدقيق مختلف أنواع العقود والاتفاقيات، وتقديم الاستشارات القانونية بشأنها، وضمان حماية مصالح العملاء.</span>
+                        <span class="lang-en hidden font-english">Drafting, reviewing, and auditing various types of contracts and agreements, providing legal consultations regarding them, and ensuring the protection of clients' interests.</span>
+                        <span class="lang-ur hidden">مختلف قسم کے معاہدوں اور معاہدوں کی تیاری، جائزہ اور آڈٹ، ان کے بارے میں قانونی مشاورت فراہم کرنا، اور کلائنٹس کے مفادات کے تحفظ کو یقینی بنانا۔</span>
+                    </p>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                        <span class="lang-ar">المزيد من التفاصيل</span>
+                        <span class="lang-en hidden">More Details</span>
+                        <span class="lang-ur hidden">مزید تفصیلات</span>
+                        <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 service-card animate-fade-in delay-300">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">
+                        <span class="lang-ar">قانون الشركات</span>
+                        <span class="lang-en hidden font-english">Corporate Law</span>
+                        <span class="lang-ur hidden">کارپوریٹ قانون</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        <span class="lang-ar">تأسيس الشركات وإعداد عقود التأسيس والأنظمة الأساسية، وتقديم الاستشارات القانونية للشركات، ومتابعة الإجراءات القانونية المتعلقة بها.</span>
+                        <span class="lang-en hidden font-english">Establishing companies, preparing articles of incorporation and bylaws, providing legal consultations to companies, and following up on related legal procedures.</span>
+                        <span class="lang-ur hidden">کمپنیوں کا قیام، انکارپوریشن کے آرٹیکلز اور قوانین کی تیاری، کمپنیوں کو قانونی مشاورت فراہم کرنا، اور متعلقہ قانونی طریقہ کار پر عمل کرنا۔</span>
+                    </p>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                        <span class="lang-ar">المزيد من التفاصيل</span>
+                        <span class="lang-en hidden">More Details</span>
+                        <span class="lang-ur hidden">مزید تفصیلات</span>
+                        <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 service-card animate-fade-in delay-100">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">
+                        <span class="lang-ar">القانون العقاري</span>
+                        <span class="lang-en hidden font-english">Real Estate Law</span>
+                        <span class="lang-ur hidden">رئیل اسٹیٹ قانون</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        <span class="lang-ar">إعداد ومراجعة عقود البيع والشراء والإيجار للعقارات، وتسجيل الملكيات، وحل النزاعات العقارية، وتقديم الاستشارات القانونية المتعلقة بالعقارات.</span>
+                        <span class="lang-en hidden font-english">Preparing and reviewing sale, purchase, and lease contracts for real estate, registering properties, resolving real estate disputes, and providing legal consultations related to real estate.</span>
+                        <span class="lang-ur hidden">رئیل اسٹیٹ کے لیے فروخت، خرید اور لیز کے معاہدوں کی تیاری اور جائزہ، جائیدادوں کی رجسٹریشن، رئیل اسٹیٹ تنازعات کو حل کرنا، اور رئیل اسٹیٹ سے متعلق قانونی مشاورت فراہم کرنا۔</span>
+                    </p>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                        <span class="lang-ar">المزيد من التفاصيل</span>
+                        <span class="lang-en hidden">More Details</span>
+                        <span class="lang-ur hidden">مزید تفصیلات</span>
+                        <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 service-card animate-fade-in delay-200">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">
+                        <span class="lang-ar">قانون العمل</span>
+                        <span class="lang-en hidden font-english">Labor Law</span>
+                        <span class="lang-ur hidden">لیبر قانون</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        <span class="lang-ar">إعداد عقود العمل، وتقديم الاستشارات القانونية للشركات والأفراد في مسائل العمل، وتمثيل العملاء في نزاعات العمل أمام الجهات المختصة.</span>
+                        <span class="lang-en hidden font-english">Preparing employment contracts, providing legal consultations to companies and individuals in labor matters, and representing clients in labor disputes before competent authorities.</span>
+                        <span class="lang-ur hidden">ملازمت کے معاہدوں کی تیاری، لیبر معاملات میں کمپنیوں اور افراد کو قانونی مشاورت فراہم کرنا، اور مجاز حکام کے سامنے لیبر تنازعات میں کلائنٹس کی نمائندگی کرنا۔</span>
+                    </p>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                        <span class="lang-ar">المزيد من التفاصيل</span>
+                        <span class="lang-en hidden">More Details</span>
+                        <span class="lang-ur hidden">مزید تفصیلات</span>
+                        <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 service-card animate-fade-in delay-300">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-comments-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">
+                        <span class="lang-ar">الاستشارات القانونية</span>
+                        <span class="lang-en hidden font-english">Legal Consultations</span>
+                        <span class="lang-ur hidden">قانونی مشاورت</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        <span class="lang-ar">تقديم استشارات قانونية متخصصة في مختلف مجالات القانون، وتحليل المخاطر القانونية، واقتراح الحلول المناسبة للعملاء.</span>
+                        <span class="lang-en hidden font-english">Providing specialized legal consultations in various fields of law, analyzing legal risks, and suggesting appropriate solutions for clients.</span>
+                        <span class="lang-ur hidden">قانون کے مختلف شعبوں میں خصوصی قانونی مشاورت فراہم کرنا، قانونی خطرات کا تجزیہ کرنا، اور کلائنٹس کے لیے مناسب حل تجویز کرنا۔</span>
+                    </p>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                        <span class="lang-ar">المزيد من التفاصيل</span>
+                        <span class="lang-en hidden">More Details</span>
+                        <span class="lang-ur hidden">مزید تفصیلات</span>
+                        <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl font-bold text-primary mb-2">
+                    <span class="lang-ar">مكتبة الملفات القانونية</span>
+                    <span class="lang-en hidden font-english">Legal Documents Library</span>
+                    <span class="lang-ur hidden">قانونی دستاویزات کی لائبریری</span>
+                </h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    <span class="lang-ar">مجموعة من الملفات والنماذج القانونية المهمة التي يمكن الاطلاع عليها وتحميلها</span>
+                    <span class="lang-en hidden font-english">A collection of important legal files and templates that can be viewed and downloaded</span>
+                    <span class="lang-ur hidden">اہم قانونی فائلوں اور ٹیمپلیٹس کا مجموعہ جنہیں دیکھا اور ڈاؤن لوڈ کیا جا سکتا ہے</span>
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <!-- Categories Sidebar -->
+                <div class="w-full md:w-1/4 mb-8 md:mb-0 animate-fade-in delay-100">
+                    <div class="bg-gray-50 rounded-lg p-6 sticky top-24">
+                        <h3 class="text-xl font-bold text-primary mb-4">
+                            <span class="lang-ar">التصنيفات</span>
+                            <span class="lang-en hidden font-english">Categories</span>
+                            <span class="lang-ur hidden">زمرہ جات</span>
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <button onclick="filterDocuments('all')" class="w-full text-left py-2 px-3 rounded-md bg-secondary text-white hover:bg-opacity-90 transition-colors document-filter active-filter">
+                                    <span class="lang-ar">جميع الملفات</span>
+                                    <span class="lang-en hidden">All Documents</span>
+                                    <span class="lang-ur hidden">تمام دستاویزات</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="filterDocuments('contracts')" class="w-full text-left py-2 px-3 rounded-md hover:bg-gray-200 transition-colors document-filter">
+                                    <span class="lang-ar">نماذج العقود</span>
+                                    <span class="lang-en hidden">Contract Templates</span>
+                                    <span class="lang-ur hidden">معاہدہ ٹیمپلیٹس</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="filterDocuments('legal-forms')" class="w-full text-left py-2 px-3 rounded-md hover:bg-gray-200 transition-colors document-filter">
+                                    <span class="lang-ar">النماذج القانونية</span>
+                                    <span class="lang-en hidden">Legal Forms</span>
+                                    <span class="lang-ur hidden">قانونی فارم</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="filterDocuments('guides')" class="w-full text-left py-2 px-3 rounded-md hover:bg-gray-200 transition-colors document-filter">
+                                    <span class="lang-ar">الأدلة الإرشادية</span>
+                                    <span class="lang-en hidden">Legal Guides</span>
+                                    <span class="lang-ur hidden">قانونی گائیڈز</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="filterDocuments('laws')" class="w-full text-left py-2 px-3 rounded-md hover:bg-gray-200 transition-colors document-filter">
+                                    <span class="lang-ar">القوانين واللوائح</span>
+                                    <span class="lang-en hidden">Laws & Regulations</span>
+                                    <span class="lang-ur hidden">قوانین اور ضوابط</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Documents List -->
+                <div class="w-full md:w-3/4 md:pl-8 animate-fade-in delay-200">
+                    <div class="mb-6">
+                        <div class="relative">
+                            <input type="text" id="document-search" placeholder="بحث عن ملف..." class="w-full py-3 px-4 pr-12 rtl:pl-12 rtl:pr-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" onkeyup="searchDocuments()">
+                            <div class="absolute inset-y-0 right-0 rtl:left-0 rtl:right-auto flex items-center pr-3 rtl:pl-3 rtl:pr-0">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="documents-container">
+                        <!-- Document 1 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-4 transition-all hover:shadow-md file-card" data-category="contracts">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4 rtl:ml-4 rtl:mr-0">
+                                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">نموذج عقد عمل</span>
+                                        <span class="lang-en hidden font-english">Employment Contract Template</span>
+                                        <span class="lang-ur hidden">ملازمت کے معاہدے کا نمونہ</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">PDF - 245 KB</p>
+                                </div>
+                                <button class="bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors">
+                                    <span class="lang-ar">تحميل</span>
+                                    <span class="lang-en hidden">Download</span>
+                                    <span class="lang-ur hidden">ڈاؤن لوڈ</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Document 2 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-4 transition-all hover:shadow-md file-card" data-category="contracts">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 rtl:ml-4 rtl:mr-0">
+                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">نموذج عقد إيجار سكني</span>
+                                        <span class="lang-en hidden font-english">Residential Lease Agreement</span>
+                                        <span class="lang-ur hidden">رہائشی لیز معاہدہ</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">DOCX - 178 KB</p>
+                                </div>
+                                <button class="bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors">
+                                    <span class="lang-ar">تحميل</span>
+                                    <span class="lang-en hidden">Download</span>
+                                    <span class="lang-ur hidden">ڈاؤن لوڈ</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Document 3 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-4 transition-all hover:shadow-md file-card" data-category="legal-forms">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 rtl:ml-4 rtl:mr-0">
+                                    <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">نموذج وكالة قانونية</span>
+                                        <span class="lang-en hidden font-english">Power of Attorney Form</span>
+                                        <span class="lang-ur hidden">پاور آف اٹارنی فارم</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">PDF - 320 KB</p>
+                                </div>
+                                <button class="bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors">
+                                    <span class="lang-ar">تحميل</span>
+                                    <span class="lang-en hidden">Download</span>
+                                    <span class="lang-ur hidden">ڈاؤن لوڈ</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Document 4 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-4 transition-all hover:shadow-md file-card" data-category="guides">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 rtl:ml-4 rtl:mr-0">
+                                    <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">دليل إجراءات التقاضي</span>
+                                        <span class="lang-en hidden font-english">Litigation Procedures Guide</span>
+                                        <span class="lang-ur hidden">مقدمہ بازی کے طریقہ کار کی گائیڈ</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">PDF - 1.2 MB</p>
+                                </div>
+                                <button class="bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors">
+                                    <span class="lang-ar">تحميل</span>
+                                    <span class="lang-en hidden">Download</span>
+                                    <span class="lang-ur hidden">ڈاؤن لوڈ</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Document 5 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-4 transition-all hover:shadow-md file-card" data-category="laws">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4 rtl:ml-4 rtl:mr-0">
+                                    <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">قانون العمل المحدث</span>
+                                        <span class="lang-en hidden font-english">Updated Labor Law</span>
+                                        <span class="lang-ur hidden">اپ ڈیٹ شدہ لیبر قانون</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">PDF - 2.5 MB</p>
+                                </div>
+                                <button class="bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors">
+                                    <span class="lang-ar">تحميل</span>
+                                    <span class="lang-en hidden">Download</span>
+                                    <span class="lang-ur hidden">ڈاؤن لوڈ</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Document 6 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-4 transition-all hover:shadow-md file-card" data-category="legal-forms">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-4 rtl:ml-4 rtl:mr-0">
+                                    <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">نموذج دعوى قضائية</span>
+                                        <span class="lang-en hidden font-english">Lawsuit Filing Form</span>
+                                        <span class="lang-ur hidden">مقدمہ دائر کرنے کا فارم</span>
+                                    </h4>
+                                    <p class="text-sm text-gray-500">DOCX - 156 KB</p>
+                                </div>
+                                <button class="bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors">
+                                    <span class="lang-ar">تحميل</span>
+                                    <span class="lang-en hidden">Download</span>
+                                    <span class="lang-ur hidden">ڈاؤن لوڈ</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-8">
+                        <nav class="inline-flex rounded-md shadow">
+                            <a href="#" class="py-2 px-4 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50">
+                                <span class="sr-only">Previous</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="py-2 px-4 bg-secondary text-white border border-secondary">1</a>
+                            <a href="#" class="py-2 px-4 bg-white border border-gray-300 hover:bg-gray-50">2</a>
+                            <a href="#" class="py-2 px-4 bg-white border border-gray-300 hover:bg-gray-50">3</a>
+                            <a href="#" class="py-2 px-4 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50">
+                                <span class="sr-only">Next</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl font-bold text-primary mb-2">
+                    <span class="lang-ar">أحدث الأخبار والمقالات</span>
+                    <span class="lang-en hidden font-english">Latest News & Articles</span>
+                    <span class="lang-ur hidden">تازہ ترین خبریں اور مضامین</span>
+                </h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    <span class="lang-ar">آخر المستجدات والمقالات القانونية في مختلف المجالات</span>
+                    <span class="lang-en hidden font-english">Latest updates and legal articles in various fields</span>
+                    <span class="lang-ur hidden">مختلف شعبوں میں تازہ ترین اپ ڈیٹس اور قانونی مضامین</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 news-card animate-fade-in delay-100">
+                    <div class="h-48 bg-primary relative">
+                        <svg class="absolute inset-0 w-full h-full text-secondary opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="currentColor"></path>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-gavel text-white text-5xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>15/06/2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3">
+                            <span class="lang-ar">التعديلات الجديدة على قانون العمل وتأثيرها على أصحاب العمل</span>
+                            <span class="lang-en hidden font-english">New Amendments to Labor Law and Their Impact on Employers</span>
+                            <span class="lang-ur hidden">لیبر قانون میں نئی ترامیم اور آجروں پر ان کا اثر</span>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            <span class="lang-ar">تحليل شامل للتعديلات الأخيرة على قانون العمل وكيفية تأثيرها على العلاقة بين أصحاب العمل والموظفين...</span>
+                            <span class="lang-en hidden font-english">A comprehensive analysis of recent amendments to labor law and how they affect the relationship between employers and employees...</span>
+                            <span class="lang-ur hidden">لیبر قانون میں حالیہ ترامیم کا جامع تجزیہ اور یہ آجروں اور ملازمین کے درمیان تعلقات کو کیسے متاثر کرتی ہیں...</span>
+                        </p>
+                        <a href="#" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                            <span class="lang-ar">قراءة المزيد</span>
+                            <span class="lang-en hidden">Read More</span>
+                            <span class="lang-ur hidden">مزید پڑھیں</span>
+                            <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 news-card animate-fade-in delay-200">
+                    <div class="h-48 bg-primary relative">
+                        <svg class="absolute inset-0 w-full h-full text-secondary opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="currentColor"></path>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-landmark text-white text-5xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>02/05/2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3">
+                            <span class="lang-ar">أحكام المحكمة العليا في قضايا الملكية الفكرية: دراسة تحليلية</span>
+                            <span class="lang-en hidden font-english">Supreme Court Rulings on Intellectual Property Cases: An Analytical Study</span>
+                            <span class="lang-ur hidden">دانشورانہ املاک کے معاملات پر سپریم کورٹ کے فیصلے: ایک تجزیاتی مطالعہ</span>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            <span class="lang-ar">استعراض لأهم أحكام المحكمة العليا في قضايا الملكية الفكرية خلال السنوات الأخيرة وتأثيرها على الممارسات القانونية...</span>
+                            <span class="lang-en hidden font-english">A review of the most important Supreme Court rulings on intellectual property cases in recent years and their impact on legal practices...</span>
+                            <span class="lang-ur hidden">حالیہ برسوں میں دانشورانہ املاک کے معاملات پر سپریم کورٹ کے اہم ترین فیصلوں کا جائزہ اور قانونی طریقوں پر ان کا اثر...</span>
+                        </p>
+                        <a href="#" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                            <span class="lang-ar">قراءة المزيد</span>
+                            <span class="lang-en hidden">Read More</span>
+                            <span class="lang-ur hidden">مزید پڑھیں</span>
+                            <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 news-card animate-fade-in delay-300">
+                    <div class="h-48 bg-primary relative">
+                        <svg class="absolute inset-0 w-full h-full text-secondary opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="currentColor"></path>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-building text-white text-5xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>18/04/2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3">
+                            <span class="lang-ar">الإطار القانوني للشركات الناشئة: التحديات والفرص</span>
+                            <span class="lang-en hidden font-english">Legal Framework for Startups: Challenges and Opportunities</span>
+                            <span class="lang-ur hidden">اسٹارٹ اپس کے لیے قانونی فریم ورک: چیلنجز اور مواقع</span>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            <span class="lang-ar">دراسة حول الإطار القانوني للشركات الناشئة والتحديات التي تواجهها، مع تقديم نصائح قانونية للرواد والمستثمرين...</span>
+                            <span class="lang-en hidden font-english">A study on the legal framework for startups and the challenges they face, with legal advice for entrepreneurs and investors...</span>
+                            <span class="lang-ur hidden">اسٹارٹ اپس کے لیے قانونی فریم ورک اور ان کو درپیش چیلنجز پر ایک مطالعہ، کاروباری افراد اور سرمایہ کاروں کے لیے قانونی مشورے کے ساتھ...</span>
+                        </p>
+                        <a href="#" class="text-secondary hover:text-primary transition-colors inline-flex items-center">
+                            <span class="lang-ar">قراءة المزيد</span>
+                            <span class="lang-en hidden">Read More</span>
+                            <span class="lang-ur hidden">مزید پڑھیں</span>
+                            <svg class="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-primary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md transition-all transform hover:scale-105">
+                    <span class="lang-ar">عرض جميع المقالات</span>
+                    <span class="lang-en hidden">View All Articles</span>
+                    <span class="lang-ur hidden">تمام مضامین دیکھیں</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl font-bold text-primary mb-2">
+                    <span class="lang-ar">اتصل بنا</span>
+                    <span class="lang-en hidden font-english">Contact Us</span>
+                    <span class="lang-ur hidden">ہم سے رابطہ کریں</span>
+                </h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    <span class="lang-ar">نحن هنا للإجابة على استفساراتك وتقديم المساعدة القانونية التي تحتاجها</span>
+                    <span class="lang-en hidden font-english">We are here to answer your inquiries and provide the legal assistance you need</span>
+                    <span class="lang-ur hidden">ہم آپ کے سوالات کا جواب دینے اور آپ کو درکار قانونی مدد فراہم کرنے کے لیے یہاں ہیں</span>
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <!-- Contact Info -->
+                <div class="w-full md:w-1/3 mb-8 md:mb-0 animate-fade-in delay-100">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-primary mb-6">
+                            <span class="lang-ar">معلومات الاتصال</span>
+                            <span class="lang-en hidden font-english">Contact Information</span>
+                            <span class="lang-ur hidden">رابطے کی معلومات</span>
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white mr-4 rtl:ml-4 rtl:mr-0 shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">العنوان</span>
+                                        <span class="lang-en hidden font-english">Address</span>
+                                        <span class="lang-ur hidden">پتہ</span>
+                                    </h4>
+                                    <p class="text-gray-600">123 شارع المحكمة، المنطقة القانونية، المدينة</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white mr-4 rtl:ml-4 rtl:mr-0 shrink-0">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">الهاتف</span>
+                                        <span class="lang-en hidden font-english">Phone</span>
+                                        <span class="lang-ur hidden">فون</span>
+                                    </h4>
+                                    <p class="text-gray-600">+123 456 7890</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white mr-4 rtl:ml-4 rtl:mr-0 shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">البريد الإلكتروني</span>
+                                        <span class="lang-en hidden font-english">Email</span>
+                                        <span class="lang-ur hidden">ای میل</span>
+                                    </h4>
+                                    <p class="text-gray-600">info@deyaaeldin.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white mr-4 rtl:ml-4 rtl:mr-0 shrink-0">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary">
+                                        <span class="lang-ar">ساعات العمل</span>
+                                        <span class="lang-en hidden font-english">Working Hours</span>
+                                        <span class="lang-ur hidden">کام کے اوقات</span>
+                                    </h4>
+                                    <p class="text-gray-600">
+                                        <span class="lang-ar">الأحد - الخميس: 9:00 صباحاً - 5:00 مساءً</span>
+                                        <span class="lang-en hidden font-english">Sunday - Thursday: 9:00 AM - 5:00 PM</span>
+                                        <span class="lang-ur hidden">اتوار - جمعرات: صبح 9:00 - شام 5:00</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-primary mb-4">
+                                <span class="lang-ar">تابعنا</span>
+                                <span class="lang-en hidden font-english">Follow Us</span>
+                                <span class="lang-ur hidden">ہمیں فالو کریں</span>
+                            </h4>
+                            <div class="flex space-x-4 rtl:space-x-reverse">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary hover:bg-secondary transition-colors flex items-center justify-center text-white">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary hover:bg-secondary transition-colors flex items-center justify-center text-white">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary hover:bg-secondary transition-colors flex items-center justify-center text-white">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary hover:bg-secondary transition-colors flex items-center justify-center text-white">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="w-full md:w-2/3 md:pl-8 animate-fade-in delay-200">
+                    <form class="bg-white rounded-lg shadow-md p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2" for="name">
+                                    <span class="lang-ar">الاسم</span>
+                                    <span class="lang-en hidden font-english">Name</span>
+                                    <span class="lang-ur hidden">نام</span>
+                                </label>
+                                <input class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" type="text" id="name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2" for="email">
+                                    <span class="lang-ar">البريد الإلكتروني</span>
+                                    <span class="lang-en hidden font-english">Email</span>
+                                    <span class="lang-ur hidden">ای میل</span>
+                                </label>
+                                <input class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" type="email" id="email">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-bold mb-2" for="phone">
+                                <span class="lang-ar">رقم الهاتف</span>
+                                <span class="lang-en hidden font-english">Phone Number</span>
+                                <span class="lang-ur hidden">فون نمبر</span>
+                            </label>
+                            <input class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" type="tel" id="phone">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-bold mb-2" for="subject">
+                                <span class="lang-ar">الموضوع</span>
+                                <span class="lang-en hidden font-english">Subject</span>
+                                <span class="lang-ur hidden">موضوع</span>
+                            </label>
+                            <input class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" type="text" id="subject">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-bold mb-2" for="message">
+                                <span class="lang-ar">الرسالة</span>
+                                <span class="lang-en hidden font-english">Message</span>
+                                <span class="lang-ur hidden">پیغام</span>
+                            </label>
+                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" id="message" rows="5"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition-colors">
+                                <span class="lang-ar">إرسال</span>
+                                <span class="lang-en hidden font-english">Send</span>
+                                <span class="lang-ur hidden">بھیجیں</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <!-- Logo and About -->
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary text-xl font-bold mr-3 rtl:ml-3 rtl:mr-0">
+                            <span class="lang-ar">ض</span>
+                            <span class="lang-en hidden">D</span>
+                            <span class="lang-ur hidden">ض</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">
+                                <span class="lang-ar">ضياء الدين للاستشارات القانونية</span>
+                                <span class="lang-en hidden font-english">Deyaaeldin Legal Consultancy</span>
+                                <span class="lang-ur hidden">ضیاء الدین قانونی مشاورت</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        <span class="lang-ar">نقدم خدمات قانونية متميزة بأعلى معايير الجودة والاحترافية، ونسعى دائماً لتحقيق أفضل النتائج لعملائنا.</span>
+                        <span class="lang-en hidden font-english">We provide distinguished legal services with the highest standards of quality and professionalism, and we always strive to achieve the best results for our clients.</span>
+                        <span class="lang-ur hidden">ہم معیار اور پیشہ ورانہ مہارت کے اعلی ترین معیارات کے ساتھ نمایاں قانونی خدمات فراہم کرتے ہیں، اور ہم ہمیشہ اپنے کلائنٹس کے لیے بہترین نتائج حاصل کرنے کی کوشش کرتے ہیں۔</span>
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="w-full md:w-1/3 mb-8 md:mb-0 md:px-8">
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="lang-ar">روابط سريعة</span>
+                        <span class="lang-en hidden font-english">Quick Links</span>
+                        <span class="lang-ur hidden">فوری لنکس</span>
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#home" class="text-gray-300 hover:text-secondary transition-colors inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="lang-ar">الرئيسية</span>
+                                <span class="lang-en hidden">Home</span>
+                                <span class="lang-ur hidden">ہوم</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-gray-300 hover:text-secondary transition-colors inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="lang-ar">من نحن</span>
+                                <span class="lang-en hidden">About Us</span>
+                                <span class="lang-ur hidden">ہمارے بارے میں</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-secondary transition-colors inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="lang-ar">خدماتنا</span>
+                                <span class="lang-en hidden">Our Services</span>
+                                <span class="lang-ur hidden">ہماری خدمات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#documents" class="text-gray-300 hover:text-secondary transition-colors inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="lang-ar">الملفات</span>
+                                <span class="lang-en hidden">Documents</span>
+                                <span class="lang-ur hidden">دستاویزات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#news" class="text-gray-300 hover:text-secondary transition-colors inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="lang-ar">الأخبار</span>
+                                <span class="lang-en hidden">News</span>
+                                <span class="lang-ur hidden">خبریں</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-300 hover:text-secondary transition-colors inline-flex items-center">
+                                <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="lang-ar">اتصل بنا</span>
+                                <span class="lang-en hidden">Contact Us</span>
+                                <span class="lang-ur hidden">ہم سے رابطہ کریں</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="lang-ar">النشرة الإخبارية</span>
+                        <span class="lang-en hidden font-english">Newsletter</span>
+                        <span class="lang-ur hidden">نیوز لیٹر</span>
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        <span class="lang-ar">اشترك في نشرتنا الإخبارية للحصول على آخر المستجدات والمقالات القانونية</span>
+                        <span class="lang-en hidden font-english">Subscribe to our newsletter to receive the latest updates and legal articles</span>
+                        <span class="lang-ur hidden">تازہ ترین اپ ڈیٹس اور قانونی مضامین حاصل کرنے کے لیے ہمارے نیوز لیٹر کی رکنیت حاصل کریں</span>
+                    </p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="البريد الإلكتروني" class="w-full px-4 py-2 rounded-l-md rtl:rounded-l-none rtl:rounded-r-md focus:outline-none">
+                            <button type="submit" class="bg-secondary hover:bg-opacity-90 text-white px-4 py-2 rounded-r-md rtl:rounded-r-none rtl:rounded-l-md transition-colors">
+                                <span class="lang-ar">اشتراك</span>
+                                <span class="lang-en hidden">Subscribe</span>
+                                <span class="lang-ur hidden">سبسکرائب</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+                <p>
+                    <span class="lang-ar">© 2023 ضياء الدين للاستشارات القانونية. جميع الحقوق محفوظة.</span>
+                    <span class="lang-en hidden font-english">© 2023 Deyaaeldin Legal Consultancy. All rights reserved.</span>
+                    <span class="lang-ur hidden">© 2023 ضیاء الدین قانونی مشاورت۔ جملہ حقوق محفوظ ہیں۔</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 rtl:right-auto rtl:left-6 bg-secondary hover:bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 invisible">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Language Switcher
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'en') ? 'ltr' : 'rtl';
+            
+            // Hide all language elements
+            document.querySelectorAll('.lang-ar, .lang-en, .lang-ur').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show only the selected language elements
+            document.querySelectorAll('.lang-' + lang).forEach(el => {
+                el.classList.remove('hidden');
+            });
+            
+            // Update active language button
+            document.querySelectorAll('#ar-btn, #en-btn, #ur-btn').forEach(btn => {
+                btn.classList.remove('text-secondary');
+            });
+            document.getElementById(lang + '-btn').classList.add('text-secondary');
+            
+            // Update search placeholder based on language
+            const searchInput = document.getElementById('document-search');
+            if (searchInput) {
+                if (lang === 'ar') {
+                    searchInput.placeholder = 'بحث عن ملف...';
+                } else if (lang === 'en') {
+                    searchInput.placeholder = 'Search for a document...';
+                } else if (lang === 'ur') {
+                    searchInput.placeholder = 'دستاویز تلاش کریں...';
+                }
+            }
+        }
+        
+        // Navigation Active Link
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function setActiveLink() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active-nav');
+                    if (link.getAttribute('data-section') === current) {
+                        link.classList.add('active-nav');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink();
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Document Filtering
+        function filterDocuments(category) {
+            const documents = document.querySelectorAll('.file-card');
+            const filterButtons = document.querySelectorAll('.document-filter');
+            
+            // Update active filter button
+            filterButtons.forEach(button => {
+                button.classList.remove('bg-secondary', 'text-white');
+                button.classList.add('hover:bg-gray-200');
+            });
+            
+            const activeButton = document.querySelector(`button[onclick="filterDocuments('${category}')"]`);
+            activeButton.classList.add('bg-secondary', 'text-white');
+            activeButton.classList.remove('hover:bg-gray-200');
+            
+            // Filter documents
+            documents.forEach(doc => {
+                if (category === 'all' || doc.dataset.category === category) {
+                    doc.style.display = 'block';
+                } else {
+                    doc.style.display = 'none';
+                }
+            });
+        }
+        
+        // Document Search
+        function searchDocuments() {
+            const searchInput = document.getElementById('document-search');
+            const filter = searchInput.value.toLowerCase();
+            const documents = document.querySelectorAll('.file-card');
+            
+            documents.forEach(doc => {
+                const title = doc.querySelector('h4').textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    doc.style.display = 'block';
+                } else {
+                    doc.style.display = 'none';
+                }
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9623fa4e040a1d87',t:'MTc1MzAzMDQzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
