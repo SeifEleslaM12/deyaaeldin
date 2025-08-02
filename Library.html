@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الملفات القانونية | ضياء الدين للاستشارات القانونية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="LibrarySTYLE.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex items-center">
+            <div class="flex items-center">
+                <div
+                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold ml-3">
+                    <span>ض</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-primary">ضياء الدين للاستشارات القانونية</h1>
+                    <p class="text-gray-600 text-sm">الخبرة القانونية التي يمكنك الاعتماد عليها</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 animate-fade-in">
+            <div>
+                <h1 class="text-3xl font-bold text-primary mb-2">مكتبة الملفات القانونية</h1>
+                <p class="text-gray-600">استعرض وحمّل الملفات القانونية المتاحة</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <a href="index.html"
+                    class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+                    <i class="fas fa-arrow-right ml-2"></i>
+                    العودة للرئيسية
+                </a>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8 animate-fade-in delay-100">
+            <div class="w-full">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="ابحث عن ملف قانوني..."
+                        class="w-full py-3 px-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Categories Sidebar -->
+            <div class="w-full lg:w-1/4 animate-fade-in delay-200">
+                <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                    <h2 class="text-xl font-bold text-primary mb-4">التصنيفات</h2>
+
+                    <ul class="space-y-2">
+                        <li>
+                            <button data-category="all"
+                                class="category-filter w-full text-right py-2 px-3 rounded-md bg-secondary text-white hover:bg-opacity-90 transition-colors">
+                                جميع الملفات <span class="float-left">(66)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="contracts"
+                                class="category-filter w-full text-right py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                                نماذج العقود <span class="float-left">(2)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="legal-forms"
+                                class="category-filter w-full text-right py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                                النماذج القانونية <span class="float-left">(2)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="guides"
+                                class="category-filter w-full text-right py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                                الأدلة الإرشادية <span class="float-left">(2)</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="laws"
+                                class="category-filter w-full text-right py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                                القوانين واللوائح <span class="float-left">(60)</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Files List -->
+            <div class="w-full lg:w-3/4 animate-fade-in delay-300">
+                <!-- Results Info -->
+                <div class="mb-6">
+                    <p class="text-gray-600">عرض <span id="results-count">66</span> ملف</p>
+                </div>
+
+                <!-- Files Grid -->
+                <div id="files-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- File 1 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="contracts" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">نموذج عقد تأسيس شركة ذات مسؤولية محدودة</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 2 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="legal-forms" data-type="doc">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-doc">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">نموذج كفالة عطل وضرر</h3>
+                                <span class="file-badge file-badge-doc">DOCX</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 3 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="legal-forms" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">نموذج وكالة قانونية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 4 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قرار إنشاء نيابة أبوظبي العمالية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 5 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون العمل المحدث</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 6 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="guides" data-type="doc">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-doc">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">دليل إجراءات التقاضي</h3>
+                                <span class="file-badge file-badge-doc">DOCX</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 7 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإجراءات المدنية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 8 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون المعاملات التجارية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 9 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الشركات التجارية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 10 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإفلاس</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 11 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون حماية المستهلك</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 12 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الضرائب</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 13 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التطوير العقاري</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 14 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الملكية العقارية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 15 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإجراءات الجزائية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 16 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون المعاملات الإلكترونية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 17 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="guides" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">دليل التحكيم التجاري</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 18 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون حماية البيانات</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 19 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الامتثال القانوني</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 20 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التعاقد الإلكتروني</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 21 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون تأسيس الشركات</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 22 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون حوكمة الشركات</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 23 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="contracts" data-type="doc">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-doc">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">نموذج عقد عمل</h3>
+                                <span class="file-badge file-badge-doc">DOCX</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 24 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإيجار السكني</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 25 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون البيع</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 26 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الشراكة</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 27 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التوريد</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 28 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الامتياز التجاري</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 29 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الاستشارات</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 30 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون بيع العقار</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 31 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون تأجير المعدات</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 32 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإيجار التجاري</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 33 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الوكالة التجارية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 34 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون إدارة العقار</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 35 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التسويق</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 36 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التمويل</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 37 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التسوية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 38 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإقرار والتعهد</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 39 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الدعاوى القضائية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 40 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون مذكرات الدفاع</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 41 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون إخلاء المسؤولية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 42 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الشكاوى القانونية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 43 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون استئناف الأحكام</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 44 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التظلم الإداري</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 45 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون تنفيذ الأحكام</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 46 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الاعتراض القانوني</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 47 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الأحوال الشخصية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 48 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الملكية الفكرية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 49 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التجارة الإلكترونية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 50 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الاستثمار الأجنبي</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 51 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون البيئة</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 52 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الجرائم الإلكترونية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 53 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون المنافسة</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 54 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التحكيم</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 55 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإثبات</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 56 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الجنسية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 57 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الإقامة</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 58 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون المرور</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 59 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التأمين</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 60 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الأوراق المالية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 61 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون البنوك</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 62 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الضمان الاجتماعي</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 63 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الرعاية الصحية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 64 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون التعليم</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 65 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الخدمة المدنية</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- File 66 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 transition-all hover:shadow-lg file-card"
+                        data-category="laws" data-type="pdf">
+                        <div class="flex items-center mb-3">
+                            <div class="file-icon file-icon-pdf">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="mr-3">
+                                <h3 class="font-bold text-primary">قانون الأمن السيبراني</h3>
+                                <span class="file-badge file-badge-pdf">PDF</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-secondary hover:bg-opacity-90 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center">
+                            <i class="fas fa-download ml-2"></i>
+                            تحميل
+                        </button>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div id="no-results" class="hidden col-span-3 text-center py-12">
+                        <div class="text-6xl text-gray-300 mb-4">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد نتائج</h3>
+                        <p class="text-gray-500">لم يتم العثور على ملفات تطابق معايير البحث. يرجى تعديل معايير البحث
+                            والمحاولة مرة أخرى.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Category Filtering
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const fileCards = document.querySelectorAll('.file-card');
+
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+
+                    // Update active filter styling
+                    categoryFilters.forEach(btn => {
+                        btn.classList.remove('bg-secondary', 'text-white');
+                        btn.classList.add('hover:bg-gray-100');
+                    });
+                    this.classList.add('bg-secondary', 'text-white');
+                    this.classList.remove('hover:bg-gray-100');
+
+                    // Filter files
+                    let visibleCount = 0;
+
+                    fileCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = '';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Update results count
+                    document.getElementById('results-count').textContent = visibleCount;
+
+                    // Show/hide no results message
+                    const noResults = document.getElementById('no-results');
+                    if (visibleCount === 0) {
+                        noResults.classList.remove('hidden');
+                    } else {
+                        noResults.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.trim().toLowerCase();
+                let visibleCount = 0;
+
+                fileCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+
+                    if (title.includes(searchTerm)) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update results count
+                document.getElementById('results-count').textContent = visibleCount;
+
+                // Show/hide no results message
+                const noResults = document.getElementById('no-results');
+                if (visibleCount === 0) {
+                    noResults.classList.remove('hidden');
+                } else {
+                    noResults.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'968dd6861406ccd4',t:'MTc1NDE0MDQ2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
